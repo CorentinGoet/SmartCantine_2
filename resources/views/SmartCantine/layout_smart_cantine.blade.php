@@ -3,10 +3,13 @@
 <head>
     <title>SmartCantine</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 </head>
 <body>
     <header>
-        This is the header !
+        @livewire('navigation-menu')
+
     </header>
     <div>
         @yield('smart_content')

@@ -22,4 +22,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/project', [App\Http\Controllers\ProjectController::class, 'index']) -> name("project.show");
-Route::get('/mesures', [App\Http\Controllers\MesuresController::class, 'index']) -> name("mesures.show");
+Route::get('/mesures/{cantine}', [App\Http\Controllers\MesuresController::class, 'index']) -> name("mesures.show");
