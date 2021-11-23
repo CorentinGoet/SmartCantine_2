@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cantine extends Model
+class Mesure extends Model
 {
     use HasFactory;
-
-    public function capteurs(){
-        return $this->hasMany(Capteur::class);
+    public function capteur(){
+        return $this->belongsTo(Capteur::class);
     }
 }
