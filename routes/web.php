@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/project', [App\Http\Controllers\ProjectController::class, 'index']) -> name("project.show");
+Route::get('/mesures', [App\Http\Controllers\MesuresController::class, 'index']) -> name("mesures.show");
