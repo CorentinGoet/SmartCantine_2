@@ -17,8 +17,8 @@ class CreateMesuresTable extends Migration
             $table->id();
             $table->unsignedBigInteger("capteur_id");
             $table->float('noise_level');
+            $table->dateTime('date_mesure');
             $table->timestamps();
-
             $table->index('capteur_id');
         });
     }
