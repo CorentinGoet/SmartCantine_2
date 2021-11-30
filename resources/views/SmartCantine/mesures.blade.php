@@ -13,7 +13,7 @@
                     <table  class="table">
                         <thead>
                         <tr>
-                            <th>Cantine</th><th>Capteur</th><th>Type</th><th>ID</th><th>Niveau Sonore</th>
+                            <th>Cantine</th><th>Capteur</th><th>Type</th><th>ID</th><th>Niveau Sonore</th><th>Date</th>
                         </tr>
                         </thead>
                         <tbody>

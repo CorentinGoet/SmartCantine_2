@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cantine;
+use App\Models\Capteur;
 use Illuminate\Http\Request;
 
 class MesuresController extends Controller
@@ -10,6 +11,7 @@ class MesuresController extends Controller
     public function index($cantine){
         $cantine = Cantine::findOrFail($cantine);
         $array = $this->graph_points($cantine);
+        Capteur::with('mesures')->get();
         return view('SmartCantine/mesures', [
             'cantine'=>$cantine,
             'array_chart'=>$array,
