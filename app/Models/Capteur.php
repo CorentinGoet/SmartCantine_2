@@ -12,6 +12,10 @@ class Capteur extends Model
         return $this->hasMany(Mesure::class);
     }
 
+    public function getId(){
+        return $this->attributes['id'];
+    }
+
     public function getCantine(){
         return $this->attributes['cantine_id'];
     }

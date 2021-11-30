@@ -14,6 +14,10 @@ class Cantine extends Model
         return $this->hasMany(Capteur::class);
     }
 
+    public function getId(){
+        return $this->attributes['id'];
+    }
+
     public function getLocation(){
         return $this->attributes['location'];
     }

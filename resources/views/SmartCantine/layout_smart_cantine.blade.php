@@ -8,7 +8,6 @@
 </head>
 <body>
     <header>
-        @livewire('navigation-menu')
 
     </header>
     <div>

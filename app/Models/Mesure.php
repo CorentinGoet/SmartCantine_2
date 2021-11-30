@@ -12,6 +12,10 @@ class Mesure extends Model
         return $this->belongsTo(Capteur::class);
     }
 
+    public function getId(){
+        return $this->attributes['id'];
+    }
+
     public function getCapteur(){
         return $this->attributes['capteur_id'];
     }

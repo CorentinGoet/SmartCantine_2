@@ -22,9 +22,10 @@
                                     <tr>
                                         <td>{{$cantine->id}}</td>
                                         <td>{{$capteur->id}}</td>
-                                        <td>{{$capteur->type}}</td>
+                                        <td>{{$capteur->getType()}}</td>
                                         <td>{{$mesure->id}}</td>
-                                        <td>{{$mesure->noise_level}}</td>
+                                        <td>{{$mesure->getNoiseLevel()}}</td>
+                                        <td>{{$mesures->getDateMesure()}}</td>
                                     </tr>
                                 @endforeach
 
@@ -35,7 +36,10 @@
                     </table>
                 </div>
                 <div>
-                    <canvas></canvas>
+                    <!-- Section with a graph -->
+                    <canvas>
+
+                    </canvas>
                 </div>
             </div>
         </div>
