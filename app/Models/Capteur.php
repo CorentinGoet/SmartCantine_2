@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Capteur extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['cantine_id', 'type'];
+
     public function mesures(){
         return $this->hasMany(Mesure::class);
     }

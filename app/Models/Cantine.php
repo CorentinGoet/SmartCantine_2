@@ -10,6 +10,8 @@ class Cantine extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['location'];
+
     public function capteurs(){
         return $this->hasMany(Capteur::class);
     }

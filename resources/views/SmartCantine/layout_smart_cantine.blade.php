@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-
+        test
     </header>
     <div>
         @yield('smart_content')

@@ -20,12 +20,12 @@
                             @forelse($cantine->capteurs as $capteur)
                                 @foreach($capteur->mesures as $mesure)
                                     <tr>
-                                        <td>{{$cantine->id}}</td>
-                                        <td>{{$capteur->id}}</td>
+                                        <td>{{$cantine->getId()}}</td>
+                                        <td>{{$capteur->getId()}}</td>
                                         <td>{{$capteur->getType()}}</td>
-                                        <td>{{$mesure->id}}</td>
+                                        <td>{{$mesure->getId()}}</td>
                                         <td>{{$mesure->getNoiseLevel()}}</td>
-                                        <td>{{$mesures->getDateMesure()}}</td>
+                                        <td>{{$mesure->getDateMesure()}}</td>
                                     </tr>
                                 @endforeach
 
