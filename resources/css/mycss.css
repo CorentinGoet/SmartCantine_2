@@ -1,0 +1,133 @@
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+ 
+    
+}
+
+.header {
+
+  /*  background-color: rgb(20, 109, 109); */
+    background-color: #fff;
+}
+.header {
+    margin: 0;
+    box-shadow: 0 0 5px rgb(20, 109, 109);
+}
+
+.titre1 {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 7px;
+  /*  color: rgb(236, 231, 231);*/
+  color: rgb(20,109,109);
+    font-size: 2.5em;
+    
+}
+
+.brest-metropole {
+    
+    padding-left: 2%;
+    line-height: 10%;
+    color: rgb(20, 109, 109);  
+}
+
+li {
+    padding: 0.7%;
+    display: inline;
+}
+
+.item1 a {
+    padding: .90mm;
+   /* color: rgb(235, 230, 230);*/
+    color: rgb(20,109,109);
+    text-decoration:rgb(235, 230, 230);
+}
+
+.item1 a:hover {
+    background-color: rgba(97, 112, 112, 0.329);
+    border-radius: 10px ;
+}
+
+.item1 {
+    padding: 0.3% 30%;
+    text-align: center;
+    font-size: 19px;
+    font-weight: lighter;
+   /* background-color: rgb(71, 187, 187); */ 
+    background-color: #fff;
+    
+}
+
+.logo {
+    position:relative;
+    width: 150px;
+    padding-left: 100px;
+    bottom: 50px;
+    
+}
+.section{
+    display: block;
+    margin-right: auto;
+}
+.img1 {
+    
+    position: initial;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 100px;
+    
+}
+
+.sidebar{
+    background-color: #fff;
+    width: 400px;
+    position:fixed;
+    right: 30px;
+    top: 160px;
+    bottom: 20px;
+    border-radius: 10px ;
+    padding: auto;
+    box-shadow: 0 0 5px rgba(20, 109, 109, 0.836); 
+}
+
+.title-sidebar {
+    text-align: center;
+    color:rgba(82, 79, 79, 0.788);
+}
+
+.text1 {
+    padding-left: 100px;
+}
+.p1 {
+    width: 600px;
+    padding: auto;
+}
+
+.text2 {
+    padding-left: 300px;
+    padding: 0.7% 30%;
+    text-align:justify;
+    font-size: 20px;
+    
+}
+.text2 a:hover {
+    background-color: rgba(97, 112, 112, 0.329);
+    border-radius: 10px ;
+}
+.text2 a {
+    padding: .5mm;
+    color: rgba(7, 26, 26, 0.952);
+    text-decoration:rgb(235, 230, 230);
+}
+
+.haut_de_page {
+  /*  background-color: #fff;
+   border-radius: 10px ; 
+    box-shadow: 0 0 5px rgba(20, 109, 109, 0.836); */
+}
