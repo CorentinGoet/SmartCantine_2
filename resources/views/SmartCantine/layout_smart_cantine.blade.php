@@ -21,12 +21,6 @@
     </div>
 
 
-    <aside class=sidebar>
-        <h2 class=title-sidebar>Exemple</h2>
-    </aside>
-
-
-
 </header>
 
 <section>

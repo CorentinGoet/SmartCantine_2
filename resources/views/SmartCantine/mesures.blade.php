@@ -35,12 +35,13 @@
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <!-- Section with a graph -->
-                    <canvas>
+                <div class=graph_1>
+            <canvas id="graph"></canvas>
 
-                    </canvas>
-                </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+            <script src={{asset("js/graph.js")}}></script>
+
+        </div>
             </div>
         </div>
     </div>
