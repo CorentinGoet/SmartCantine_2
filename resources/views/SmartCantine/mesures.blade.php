@@ -7,10 +7,31 @@
             This is the display of noise levels !
         </p>
 
-        <div>
-            <div class="content-wrapper">
-                <div class="grid-margin stretch-card">
-                    <table  class="table">
+
+            <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0">
+                <div class="container my-auto">
+                    <div class="row justify-content-center">
+
+                        <div class="col-xl-12 col-lg-7">
+                            <!-- Bar Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h2 class="m-0 font-weight-bold text-primary">Niveau sonore</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="line-chart">
+                                        <canvas id="graph"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h2>Mesures</h2>
+                    </div>
+                    <div class="card-body">
+                    <table class="table-responsive">
                         <thead>
                         <tr>
                             <th>Cantine</th><th>Capteur</th><th>Type</th><th>ID</th><th>Niveau Sonore</th><th>Date</th>
@@ -34,15 +55,20 @@
                             @endforelse
                         </tbody>
                     </table>
+                    </div>
                 </div>
-                <div>
-                    <!-- Section with a graph -->
-                    <canvas>
 
-                    </canvas>
                 </div>
             </div>
         </div>
+
     </div>
+
+    <script>
+        let graph_labels = @json($graph_data['labels']);
+        let graph_values = @json($graph_data['values']);
+    </script>
+    <script src={{asset("js/chart.js/Chart.min.js")}}></script>
+    <script src="{{asset("js/my_line_graph.js")}}"></script>
 @endsection
 

@@ -10,23 +10,31 @@ class MesuresController extends Controller
 {
     public function index($cantine){
         $cantine = Cantine::findOrFail($cantine);
-        $array = $this->graph_points($cantine);
         Capteur::with('mesures')->get();
+        $graph_data = $this->data();
+        //dd($graph_data['labels']);
+
         return view('SmartCantine/mesures', [
             'cantine'=>$cantine,
-            'array_chart'=>$array,
+            'graph_data' => $graph_data,
         ]);
     }
 
-    private function graph_points($cantine){
-        $array = [];
-        foreach ($cantine->capteurs as $capteur){
-            foreach ($capteur->mesures as $mesure){
-                $x = $mesure->created_at;
-                $y = $mesure->noise_level;
-                array_push($array, array('x'=>$x, 'y'=>$y));
+    protected function data(){
+        $capteurs = Capteur::with('mesures')->get();
+        $labels = [];
+        $values = [];
+        $i = 0;
+        foreach ($capteurs as $capteur){
+            foreach ($capteur->mesures as $mesure) {
+                $labels[$i] = $mesure->date_mesure;
+                $values[$i] = $mesure->noise_level;
+                $i++;
             }
         }
-        return $array;
+        return ["labels" => $labels,
+                "values" => $values];
     }
+
+
 }
