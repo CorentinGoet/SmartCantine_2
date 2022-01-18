@@ -16,8 +16,7 @@
         <h3 class="brest-metropole">Brest Métropole </h3>
         <nav class="item1">
             <li> <a href="{{url("project.show")}}" target="_blank" title="la page d'accueil">Home</a> </li>
-            <li> <a href="connexion.html" target="_blank" title="se connecter">Se connecter</a> </li>
-            <li> <a href="Inscription.html" target="_blank" title="S'inscrire">Services</a> </li>
+            <li> <a href="{{url("/new_login")}}" target="_blank" title="se connecter">Se connecter</a> </li>
             <li> <a href="Contact Us.html" target="_blank" title="nous connecter">s'inscrire</a> </li>
         </nav>
     </div>
