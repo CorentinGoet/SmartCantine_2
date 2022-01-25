@@ -24,3 +24,7 @@ Route::get('/mesures/{cantine}', [App\Http\Controllers\MesuresController::class,
 Route::get('/new_login', function (){
     return view('auth.new_login');
 });
+
+Route::get('/new_index',  function (){
+    return view('SmartCantine.indexv2');
+});

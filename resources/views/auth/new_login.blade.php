@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<form>
-
+<form method="POST" action="{{ route('login') }}">
+    @csrf
     <h1>Se connecter</h1>
 
     <p class="choose-email">Entrer votre email et votre mot de passe</p>
@@ -18,7 +18,7 @@
         <input type="password" placeholder="Mot de passe">
     </div>
 
-    <p class="inscription" > <a href="Mot de passe oublié.html">Mot de passe oublié?</a></p>
+    <p class="inscription" > <a href="{{ route('password.request') }}">Mot de passe oublié?</a></p>
     <div align="center">
         <button type="submit">Se connecter</button>
     </div>

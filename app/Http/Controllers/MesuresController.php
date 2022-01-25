@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TrashMail;
 use App\Models\Cantine;
 use App\Models\Capteur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MesuresController extends Controller
 {
@@ -13,7 +15,6 @@ class MesuresController extends Controller
         Capteur::with('mesures')->get();
         $graph_data = $this->data();
         //dd($graph_data['labels']);
-
         return view('SmartCantine/mesures', [
             'cantine'=>$cantine,
             'graph_data' => $graph_data,

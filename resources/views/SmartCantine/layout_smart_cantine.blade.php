@@ -15,9 +15,9 @@
 
         <h3 class="brest-metropole">Brest Métropole </h3>
         <nav class="item1">
-            <li> <a href="{{url("project.show")}}" target="_blank" title="la page d'accueil">Home</a> </li>
-            <li> <a href="{{url("/new_login")}}" target="_blank" title="se connecter">Se connecter</a> </li>
-            <li> <a href="Contact Us.html" target="_blank" title="nous connecter">s'inscrire</a> </li>
+            <li> <a href="{{route("project.show")}}" title="la page d'accueil">Home</a> </li>
+            <li> <a href="{{url("/new_login")}}" title="se connecter">Se connecter</a> </li>
+            <li> <a href="Contact Us.html" title="nous contacter">nous contacter</a> </li>
         </nav>
     </div>
 
@@ -46,7 +46,7 @@
 <footer>
     <div class=text2>
 
-        <li> <a href="test 1.html" target="_blank" title="la page d'accuil">contactez nous</a> </li>
+        <li> <a href="test 1.html" target="_blank" title="la page d'accueil">contactez nous</a> </li>
     </div>
     <img class=logo src="ensta-logoh-noir.png">
 </footer>
