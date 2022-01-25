@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <title>SmartCantine</title>
     <link rel="stylesheet" href={{asset('css/mycss.css')}}>
-    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <meta name="description" content="C'est la site du projet SmartCantine" />
-    <meta c>
 </head>
 <body>
 <header class=header>
@@ -15,14 +13,17 @@
 
         <h3 class="brest-metropole">Brest Métropole </h3>
         <nav class="item1">
-            <li> <a href="{{route("project.show")}}" title="la page d'accueil">Home</a> </li>
-            <li> <a href="{{url("/new_login")}}" title="se connecter">Se connecter</a> </li>
-            <li> <a href="Contact Us.html" title="nous contacter">nous contacter</a> </li>
+            <li> <a href= "{{url('/project')}}" target="_blank" title="La page d'accueil">Home</a> </li>
+            <li> <a href="{{url('/new_login')}}" target="_blank" title="Se connecter">Se connecter</a> </li>
+            <li> <a href="Contact Us.html" target="_blank" title="Nous connecter">Services</a> </li>
+          <!--  <li> <a href="Inscription.html" target="_blank" title="S'inscrire ">s'inscrire</a> </li>-->
         </nav>
     </div>
 
 
-
+    <aside class=sidebar>
+        <h2 class=title-sidebar>Exemple</h2>
+    </aside>
 
 
 
@@ -46,7 +47,7 @@
 <footer>
     <div class=text2>
 
-        <li> <a href="test 1.html" target="_blank" title="la page d'accueil">contactez nous</a> </li>
+        <li> <a href="test 1.html" target="_blank" title="la page d'accuil">contactez nous</a> </li>
     </div>
     <img class=logo src="ensta-logoh-noir.png">
 </footer>

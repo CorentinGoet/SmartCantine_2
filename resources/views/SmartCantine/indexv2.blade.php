@@ -65,8 +65,6 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
                 <li><a class="nav-link scrollto" href="#team">Team</a></li>
                 <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -96,7 +94,7 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-        <h1>Welcome to <span>BizLand</span></h1>
+        <h1>Welcome to <span>Smart Cantine</span></h1>
         <h2>We are team of talented designers making websites with Bootstrap</h2>
         <div class="d-flex">
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
