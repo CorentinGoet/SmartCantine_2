@@ -34,12 +34,9 @@ class TTN_API_Controller extends Controller
         $i = 0;
         foreach ($string_array as $str_json){
             $tmp = json_decode($str_json, null, 512, JSON_OBJECT_AS_ARRAY);
-
             if($tmp != null){
-
                 $val_array[$i] = $tmp["result"]["uplink_message"]["frm_payload"];
             }
-
             $i++;
         }
         dd($val_array);

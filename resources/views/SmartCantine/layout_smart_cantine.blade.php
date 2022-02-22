@@ -50,7 +50,6 @@
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#team">Team</a></li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 @if(Route::has('login'))
                     @auth
                     <li><a class="nav-link scrollto" href="{{url('/mesures/1')}}">Mesures</a></li>
@@ -77,13 +76,13 @@
             <div class="row">
 
                 <div class="col-lg-3 col-md-6 footer-contact">
-                    <h3>BizLand<span>.</span></h3>
+                    <h3>SmartCantine<span>.</span></h3>
                     <p>
-                        A108 Adam Street <br>
-                        New York, NY 535022<br>
-                        United States <br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        ENSTA Bretagne <br>
+                        2 rue François Verny <br>
+                        29200 Brest<br>
+                        France<br><br>
+                        <strong>Email:</strong> smartcantine.ensta@gmail.com<br>
                     </p>
                 </div>
 
