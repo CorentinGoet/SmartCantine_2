@@ -37,5 +37,24 @@ class MesuresController extends Controller
                 "values" => $values];
     }
 
+    /**
+     * Creates a new entry in the database for mesure in the database.
+     * @param $data
+     */
+    public function save($data){
+        try{
+            $capteur_id = $data["capteur_id"];
+            $noise_level = $data["noise_level"];
+            $date_mesure = $data["date_mesure"];
+            Mesure::create(["capteur_id" => $capteur_id,
+                            "noise_level" => $noise_level,
+                            "date_mesure" => $date_mesure]);
+        }catch (Exception $ex){
+            return "Invalid data format";
+        }
+
+        return 0;
+    }
+
 
 }
