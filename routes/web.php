@@ -31,3 +31,6 @@ Route::get('/new_index',  function (){
 });
 
 Route::get('/api-ttn', [App\Http\Controllers\TTN_API_Controller::class, 'index']) -> name('ttn-api.show');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/mqtt', [\App\Http\Controllers\MQTT_controller::class, 'index'])->name('mqtt.show');

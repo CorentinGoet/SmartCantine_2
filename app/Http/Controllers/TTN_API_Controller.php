@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mesure;
 use ErrorException;
 use Illuminate\Http\Request;
 use PHPUnit\Exception;
@@ -31,7 +32,6 @@ class TTN_API_Controller extends Controller
     public function index(){
 
         $ttn_request = $this->request();
-        dd($ttn_request);
         $string_array = explode("\n", $ttn_request);
         $val_array = [];
         $i = 0;
@@ -43,6 +43,7 @@ class TTN_API_Controller extends Controller
             if($tmp != null){
                 try{
                     $val_array[$i] = $tmp["result"]["uplink_message"]["frm_payload"];
+                    $mesure_data['date_mesure'] = substr($tmp['result']['received_at'], 0, 18);
                 }catch(ErrorException $e){
                     //dd($tmp);
                 }
@@ -51,7 +52,12 @@ class TTN_API_Controller extends Controller
             $i++;
         }
 
+        foreach($val_array as $str_payload){
+            $json_payload = json_decode(base64_decode($str_payload), null, 512, JSON_OBJECT_AS_ARRAY);
+            $mesure_data['capteur_id'] = $json_payload['id'];
+            $mesure_data['noise_level'] = $json_payload['mesure'];
 
-        dd($val_array);
+            MesuresController::save($mesure_data);
+        }
     }
 }
