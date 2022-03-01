@@ -20,7 +20,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/project', [App\Http\Controllers\ProjectController::class, 'index']) -> name("project.show");
-Route::get('/mesures/{cantine}', [App\Http\Controllers\MesuresController::class, 'index']) -> name("mesures.show");
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/mesures/{cantine}', [App\Http\Controllers\MesuresController::class, 'index']) -> name("mesures.show");
 Route::get('/new_login', function (){
     return view('auth.new_login');
 });

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use ErrorException;
 use Illuminate\Http\Request;
+use PHPUnit\Exception;
 
 class TTN_API_Controller extends Controller
 {
@@ -29,16 +31,27 @@ class TTN_API_Controller extends Controller
     public function index(){
 
         $ttn_request = $this->request();
+        dd($ttn_request);
         $string_array = explode("\n", $ttn_request);
         $val_array = [];
         $i = 0;
+
         foreach ($string_array as $str_json){
+
             $tmp = json_decode($str_json, null, 512, JSON_OBJECT_AS_ARRAY);
+
             if($tmp != null){
-                $val_array[$i] = $tmp["result"]["uplink_message"]["frm_payload"];
+                try{
+                    $val_array[$i] = $tmp["result"]["uplink_message"]["frm_payload"];
+                }catch(ErrorException $e){
+                    //dd($tmp);
+                }
+
             }
             $i++;
         }
+
+
         dd($val_array);
     }
 }
