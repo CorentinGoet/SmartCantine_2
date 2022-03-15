@@ -44,12 +44,10 @@ class MesuresController extends Controller
      */
     public static function save($data){
         try{
-            $capteur_id = $data["capteur_id"];
             $noise_level = $data["noise_level"];
             $date_mesure = $data["date_mesure"];
-            Mesure::create(["capteur_id" => $capteur_id,
-                            "noise_level" => $noise_level,
-                            "date_mesure" => $date_mesure]);
+            $ttn_device_id = $data["ttn_device_id"];
+
         }catch (Exception $ex){
             return "Invalid data format";
         }

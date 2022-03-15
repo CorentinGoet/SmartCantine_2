@@ -17,6 +17,7 @@ class CreateCapteursTable extends Migration
             $table->id();
             $table->unsignedBigInteger('cantine_id');
             $table->string("type");
+            $table->string("ttn_device_id");
             $table->timestamps();
 
             $table->index("cantine_id");

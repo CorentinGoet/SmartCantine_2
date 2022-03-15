@@ -36,6 +36,7 @@ class TTN_API_Controller extends Controller
         $val_array = [];
         $i = 0;
 
+
         foreach ($string_array as $str_json){
 
             $tmp = json_decode($str_json, null, 512, JSON_OBJECT_AS_ARRAY);
@@ -44,6 +45,7 @@ class TTN_API_Controller extends Controller
                 try{
                     $val_array[$i] = $tmp["result"]["uplink_message"]["frm_payload"];
                     $mesure_data['date_mesure'] = substr($tmp['result']['received_at'], 0, 18);
+                    $mesure_data['ttn_device_id'] = $tmp['result']['end_device_ids']['device_id']
                 }catch(ErrorException $e){
                     //dd($tmp);
                 }
@@ -53,9 +55,12 @@ class TTN_API_Controller extends Controller
         }
 
         foreach($val_array as $str_payload){
-            $json_payload = json_decode(base64_decode($str_payload), null, 512, JSON_OBJECT_AS_ARRAY);
-            $mesure_data['capteur_id'] = $json_payload['id'];
-            $mesure_data['noise_level'] = $json_payload['mesure'];
+            //$json_payload = json_decode(base64_decode($str_payload), null, 512, JSON_OBJECT_AS_ARRAY);
+            //$mesure_data['capteur_id'] = $json_payload['id'];
+            //$mesure_data['noise_level'] = $json_payload['mesure'];
+            $str_dec = str_split(base64_decode($str_payload));
+            $mesure_data['noise_level'] = ord($str_dec[0]);
+
 
             MesuresController::save($mesure_data);
         }
