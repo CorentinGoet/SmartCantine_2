@@ -1,4 +1,4 @@
-<!-- view presenting the project -->
+<!-- view presenting the project 
 @extends('SmartCantine/layout_smart_cantine')
 
 @section('smart_content')
@@ -7,4 +7,4 @@
         This is the project presentation !
     </p>
 </div>
-@endsection
+@endsection -->
