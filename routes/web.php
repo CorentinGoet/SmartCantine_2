@@ -33,3 +33,6 @@ Route::get('/new_index',  function (){
 Route::get('/api-ttn', [App\Http\Controllers\TTN_API_Controller::class, 'index']) -> name('ttn-api.show');
 
 
+Route::get('/login1', function (){
+    return view('SmartCantine.loginv1');
+});
