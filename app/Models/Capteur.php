@@ -9,7 +9,7 @@ class Capteur extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['cantine_id', 'type'];
+    protected $fillable = ['ttn_device_id', 'cantine_id', 'type'];
 
     public function mesures(){
         return $this->hasMany(Mesure::class);

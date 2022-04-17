@@ -44,5 +44,4 @@ class Mesure extends Model
     }
 
 
-
 }
