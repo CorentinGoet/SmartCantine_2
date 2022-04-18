@@ -57,14 +57,7 @@
     <!-- Template Main CSS File -->
     <link href="{{asset("css/style_template.css")}}" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: BizLand - v3.7.0
-    * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-    <!-- Scripts
-    <script src={{asset("/js/main.js")}}></script> -->
+    <!-- =======================================================-->
 </head>
 
 <body>
@@ -94,8 +87,6 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
 
                 @if(Route::has('login'))
                     @auth
