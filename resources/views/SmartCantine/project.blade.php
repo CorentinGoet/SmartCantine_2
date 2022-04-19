@@ -1,7 +1,7 @@
-<!-- view presenting the project -->
 @extends('SmartCantine/layout_smart_cantine')
 
 @section('smart_content')
+
     <section id="about" class="about section-bg">
         <div class="container" >
 
