@@ -25,7 +25,7 @@ class MesureFactory extends Factory
         return [
             'capteur_id' => $this->faker->numberBetween(0, 5), // Only 5 different capt
             'date_mesure' => $this->faker->dateTimeThisMonth(),
-            'noise_level' => $this->faker->numberBetween(0, 150),
+            'noise_level' => $this->faker->numberBetween(40, 60),
         ];
 
     }

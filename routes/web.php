@@ -30,6 +30,6 @@ Route::get('/new_index',  function (){
     return view('SmartCantine.indexv2');
 });
 
-Route::get('/api-ttn', [App\Http\Controllers\TTN_API_Controller::class, 'index']) -> name('ttn-api.show');
+Route::post('/api-ttn', [App\Http\Controllers\TTN_API_Controller::class, 'index']) -> name('ttn-api.show');
 
 

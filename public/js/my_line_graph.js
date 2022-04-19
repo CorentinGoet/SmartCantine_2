@@ -8,7 +8,7 @@ let massPopChart = new Chart(my_line_graph, {
         labels: graph_labels,
         datasets: [
             {
-                label: "niveau de bruit ",
+                label: "Niveau sonore (dB)",
                 data: graph_values,
                 backgroundColor: "#66CC66",
                 hoverBorderWidth: 3,
@@ -17,7 +17,7 @@ let massPopChart = new Chart(my_line_graph, {
     },
     options: {
         title: {
-            display: true,
+            display: false,
             text: "exemple",
             fontSize: 24,
         },
