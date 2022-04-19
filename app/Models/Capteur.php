@@ -35,5 +35,8 @@ class Capteur extends Model
         $this->attributes['type'] = $type;
     }
 
+    public function getTtn_device_id(){
+        return $this->attributes['ttn_device_id'];
+    }
 
 }
