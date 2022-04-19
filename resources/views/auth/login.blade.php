@@ -62,24 +62,24 @@
 
                     <div class="center">
                         <h2 class="form-title" id="login"><span></span>Log in</h2>
-                        <div class="form-holder">
+                        
                             <form method="POST" action={{route('login') }}>
                              @csrf
-                             <div>
+                            <div class="form-holder">
                                 <input name="email" id="email" type="email" class="input" placeholder="Email" />
                                 <input name="password"  type="password" class="input" placeholder="Password" />
                             </div>
                     
-                        <button class="btn" value="submit">Log in</button>
+                                <button class="btn" value="submit">Log in</button>
                     
                             </form>
 
+                        
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
     <!--       <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
-</section><!-- End Hero -->
+        </section><!-- End Hero -->
 
 
     <div id="preloader"></div>
