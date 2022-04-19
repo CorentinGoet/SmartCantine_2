@@ -73,7 +73,7 @@
                     @auth
                     <li><a class="nav-link scrollto" href="{{url('/mesures/1')}}">Mesures</a></li>
                     @else
-                    <li><a class="nav-link scrollto" href="{{url('/login1')}}">Login</a></li>
+                    <li><a class="nav-link scrollto" href="{{url('/login')}}">Login</a></li>
                     @endauth
                 @endif
 
