@@ -83,7 +83,7 @@
 
 		<div class="center">
         <h2 class="form-title" id="login"><span></span>Log in</h2>
-			<div class="form-holder">
+			<div class="">
 
 				<input type="email" class="input" placeholder="Email" />
 				<input type="password" class="input" placeholder="Password" />
