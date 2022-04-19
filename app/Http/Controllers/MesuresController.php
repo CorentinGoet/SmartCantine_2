@@ -40,6 +40,12 @@ class MesuresController extends Controller
 
     /**
      * Creates a new entry in the database for mesure in the database.
+     *
+     * the given array must have:
+     * - "noise_level" -> int value of noise level in decibel
+     * - "date_mesure" -> str date of measure
+     * - "ttn_device_id" -> str id of The Things Network end-device.
+     *
      * @param $data
      */
     public static function save($data){
@@ -47,7 +53,7 @@ class MesuresController extends Controller
             $noise_level = $data["noise_level"];
             $date_mesure = $data["date_mesure"];
             $ttn_device_id = $data["ttn_device_id"];
-
+            Mesure::create(["noise_level" => $noise_level] );
         }catch (Exception $ex){
             return "Invalid data format";
         }

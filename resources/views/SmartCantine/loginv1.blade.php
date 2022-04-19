@@ -37,7 +37,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="project iot noise" name="keywords">
 
-    <link rel="stylesheet" href={{asset('css/login.css')}}> 
+    <link rel="stylesheet" href={{asset('css/login.css')}}>
 
     <!-- Favicons -->
     <link href={{asset("/img/favicon.png")}} rel="icon">
@@ -69,8 +69,8 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <h1 class="logo"><a href="{{url("project")}}">SmartCantine<span>.</span></a></h1>
+    </div>
 
-      
 
   </header><!-- End Header -->
 
@@ -84,15 +84,16 @@
 		<div class="center">
         <h2 class="form-title" id="login"><span></span>Log in</h2>
 			<div class="form-holder">
+
 				<input type="email" class="input" placeholder="Email" />
 				<input type="password" class="input" placeholder="Password" />
-			
+
             </div>
             <div>
             <a href= "{{ route('login') }}" class="btn">Log in</a>
             </div>
-            
-            
+
+
 		</div>
 	</div>
 </div>
@@ -110,7 +111,7 @@
 
 
 
-  
+
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

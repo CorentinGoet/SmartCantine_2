@@ -3,10 +3,6 @@
 
 @section('smart_content')
     <div>
-        <p>
-            This is the display of noise levels !
-        </p>
-
 
             <div class="d-flex flex-column min-vh-100 bg-black-50 pt-10 pt-md-8 pb-7 pb-md-0">
                 <div class="container my-auto">
@@ -17,6 +13,7 @@
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h2 class="m-0 font-weight-bold text-primary">Niveau sonore</h2>
+
                                 </div>
                                 <div class="card-body">
                                     <div class="line-chart">

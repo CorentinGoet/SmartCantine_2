@@ -29,6 +29,30 @@ class TTN_API_Controller extends Controller
         return $res;
     }
 
+    /**
+     * Takes the JSON array given by The Things Network and returns an array with the necessary elements
+     * for the database entry.
+     *
+     * @param $param array json array.
+     */
+    private function parse_json_measure(array $param){
+        // General info about this transmission
+        $payload = base64_decode($param["result"]["uplink_message"]["frm_payload"]);
+        $transmission_date_string = substr($param['result']['received_at'], 0, 18);
+        $transmission_date = strtotime($transmission_date_string);
+        $device_id = $param['result']['end_device_ids']['device_id'];
+
+        // Finding noise level and date of each measure
+        $decibel_values = [];
+        $measure_times = [];
+        for($i=0; $i<5; $i++){
+            $decibel_values[$i] = ord($payload[$i]);
+            $measure_times[$i] = getDate($transmission_date - $i*10);
+        }
+
+        return ['ttn_device_id' => $device_id, 'dates' => $measure_times, 'noise_levels'=>$decibel_values];
+    }
+
     public function index(){
 
         $ttn_request = $this->request();
@@ -38,23 +62,22 @@ class TTN_API_Controller extends Controller
 
 
         foreach ($string_array as $str_json){
+            try{
+                $json_array = json_decode($str_json, null, 512, JSON_OBJECT_AS_ARRAY);
+                $measure_array = $this->parse_json_measure($json_array);
 
-            $tmp = json_decode($str_json, null, 512, JSON_OBJECT_AS_ARRAY);
-
-            if($tmp != null){
-                try{
-                    $val_array[$i] = $tmp["result"]["uplink_message"]["frm_payload"];
-                    $mesure_data['date_mesure'] = substr($tmp['result']['received_at'], 0, 18);
-                    $mesure_data['ttn_device_id'] = $tmp['result']['end_device_ids']['device_id']
-                }catch(ErrorException $e){
-                    //dd($tmp);
+                foreach ($measure_array as $measure){
+                    MesuresController::save();
                 }
+            }catch(ErrorException $e){
 
             }
-            $i++;
+
+
         }
 
-        foreach($val_array as $str_payload){
+        foreach($val_array as $str_payload) {
+
             //$json_payload = json_decode(base64_decode($str_payload), null, 512, JSON_OBJECT_AS_ARRAY);
             //$mesure_data['capteur_id'] = $json_payload['id'];
             //$mesure_data['noise_level'] = $json_payload['mesure'];
@@ -64,5 +87,6 @@ class TTN_API_Controller extends Controller
 
             MesuresController::save($mesure_data);
         }
+        return back()->with('success', 'data updated');
     }
 }
