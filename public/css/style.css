@@ -51,3 +51,8 @@ form button{
   outline:none;
   cursor:pointer;
 }
+
+.img-logo{
+
+  position : fixed; right : auto; bottom : auto; 
+}

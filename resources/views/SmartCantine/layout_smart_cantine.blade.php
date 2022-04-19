@@ -65,12 +65,12 @@
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
+    <!--  <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="SmartCantine@example.com">Smartcantine.ensta@gmail.com</a></i>
-      </div>
+      </div> -->
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+      <!--  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
       </div>
     </div>
   </section>
@@ -80,8 +80,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <h1 class="logo"><a href="{{url("project")}}">SmartCantine<span>.</span></a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
       
       <nav id="navbar" class="navbar">
         <ul>
@@ -107,8 +106,8 @@
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
       <h1>Welcome to <span>SmartCantine</span></h1>
       <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
- <!--       <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+        <a href="#about" class="btn-get-started scrollto">About</a>
+ 
       </div>
     </div>
   </section><!-- End Hero -->
@@ -124,19 +123,7 @@
   <!-- ======= Footer ======= -->
  <footer id="footer">
 
- <!--   <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div> -->
+
 
     <div class="footer-top">
       <div class="container">
@@ -149,7 +136,6 @@
               2 rue François Verny <br>
               Brest, 29200<br>
               France <br><br>
-              <strong>Email:</strong> Smartcantine.ensta@gmail.com<br>
             </p>
           </div>
 
@@ -163,17 +149,11 @@
           </div>
 
 
-          <!--<div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            
-            </div>
-          </div> -->
+          <div class="col-lg-3 col-md-6 img-logo">
+            <img src="assets/img/ensta-logoh-noir.png" class="img-fluid" alt="">
+          </div>
+
+
 
         </div>
       </div>
