@@ -90,7 +90,7 @@
 
             </div>
             <div>
-            <a href= "{{ route('login') }}" class="btn">Log in</a>
+            <button href= "{{ route('login') }}" class="btn" value="submit">Log in</button>
             </div>
 
 
@@ -99,7 +99,7 @@
 </div>
 
 
- <!--       <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+ 
       </div>
     </div>
   </section><!-- End Hero -->
