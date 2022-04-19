@@ -63,7 +63,8 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="logo"><a href="{{url("project")}}">SmartCantine<span>.</span></a></h1>
-      
+
+
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
@@ -75,7 +76,7 @@
                     <li><a class="nav-link scrollto" href="{{url('/login1')}}">Login</a></li>
                     @endauth
                 @endif
-                
+
     </div>
   </header><!-- End Header -->
   <!-- ======= Hero Section ======= -->
@@ -84,13 +85,14 @@
       <h1>Welcome to <span>SmartCantine</span></h1>
       <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">About</a>
- 
+
       </div>
     </div>
   </section><!-- End Hero -->
   <main id="main">
 
 @yield('smart_content')
+  </main>
 
   <!-- ======= Footer ======= -->
  <footer id="footer">
@@ -127,6 +129,7 @@
       <div class="copyright">
       <div class="credits">
       </div>
+    </div>
     </div>
   </footer><!-- End Footer -->
   <div id="preloader"></div>
