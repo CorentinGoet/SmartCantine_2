@@ -27,9 +27,12 @@ Route::get('/new_index',  function (){
     return view('SmartCantine.indexv2');
 });
 
-Route::post('/api-ttn', [App\Http\Controllers\TTN_API_Controller::class, 'index']) -> name('ttn-api.show');
+Route::get('/api-ttn', [App\Http\Controllers\TTN_API_Controller::class, 'index']) -> name('ttn-api.show');
 
 
 Route::get('/login1', function (){
     return view('SmartCantine.loginv1');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/mqtt/start', [App\Http\Controllers\MQTTController::class, 'start']) -> name("mqtt.start");
+Route::middleware(['auth:sanctum', 'verified'])->get('/mqtt/stop', [App\Http\Controllers\MQTTController::class, 'stop']) -> name("mqtt.stop");

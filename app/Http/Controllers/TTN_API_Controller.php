@@ -64,12 +64,15 @@ class TTN_API_Controller extends Controller
         foreach ($string_array as $str_json){
             try{
                 $json_array = json_decode($str_json, null, 512, JSON_OBJECT_AS_ARRAY);
-                $measure_array = $this->parse_json_measure($json_array);
+                if ($json_array != null){
+                    $measure_array = $this->parse_json_measure($json_array);
 
-                foreach ($measure_array as $measure){
-                    MesuresController::save();
+                    foreach ($measure_array as $measure){
+                        MesuresController::save($measure);
+                    }
                 }
-            }catch(ErrorException $e){
+
+            }catch(TypeError $e){
 
             }
 
@@ -87,6 +90,6 @@ class TTN_API_Controller extends Controller
 
             MesuresController::save($mesure_data);
         }
-        return back()->with('success', 'data updated');
+        return redirect('/mesures/1');
     }
 }

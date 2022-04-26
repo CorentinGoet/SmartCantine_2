@@ -10,7 +10,7 @@ use PhpMqtt\Client\Facades\MQTT;
  */
 class MQTTController extends Controller
 {
-    /** @var \PhpMqtt\Client\Contracts\MqttClient $mqtt */
+    /** @var Array of \PhpMqtt\Client\Contracts\MqttClient */
     private $mqtt;
 
 
@@ -26,11 +26,17 @@ class MQTTController extends Controller
      */
     public function start(){
 
-        $this->mqtt = MQTT::connection();
-        $this->mqtt->subscribe('some/topic', function (string $topic, string $message) {
-            echo sprintf('Received QoS level 1 message on topic [%s]: %s', $topic, $message);
-        }, 1);
-        $this->mqtt->loop(true);
+        $topics = $this->getTopics();
+        $connected = "";
+        foreach($topics as $ttn_id => $topic){
+            $this->mqtt[$ttn_id] = MQTT::connection();
+            $this->mqtt[$ttn_id] -> subscribe($topic, function (string $topic, string $message) {
+                echo sprintf('Received QoS level 0 message on topic [%s]: %s', $topic, $message);
+            }, 0);
+            $this->mqtt[$ttn_id]->loop(true);
+            $connected = $connected.$ttn_id.", ";
+        }
+        return back()->with("connected to: ".$connected);
     }
 
     /**
@@ -46,11 +52,21 @@ class MQTTController extends Controller
         $topics = [];
         foreach ($capteurs as $capteur){
             try{
-                $topics[$capteur->getId()] = "v3/smart-cantine-app@ttn/devices/".$capteur->getTtn_device_id()."/up";
+                $topics[$capteur->getTtn_device_id()] = "v3/smart-cantine-app@ttn/devices/".$capteur->getTtn_device_id()."/up";
             }catch(ErrorException  $e){
 
             }
         }
+        return $topics;
 
+    }
+
+    /**
+     * Disconnects all mqtt connections
+     */
+    public function stop(){
+        foreach($this->mqtt as $ttn_id => $mqtt_connection){
+            $mqtt_connection->interrupt();
+        }
     }
 }
